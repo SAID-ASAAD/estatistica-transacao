@@ -1,6 +1,6 @@
 package com.said.estatistica_transacao.infrastructure.repositories;
 
-import com.said.estatistica_transacao.infrastructure.dtos.TransacaoRequestDto;
+import com.said.estatistica_transacao.infrastructure.dtos.TransacaoDto;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -8,17 +8,17 @@ import java.util.List;
 
 public class TransacaoRepository {
 
-    private final List<TransacaoRequestDto> transacoes = new ArrayList<>();
+    private final List<TransacaoDto> transacoes = new ArrayList<>();
 
-    public void receberTransacao(TransacaoRequestDto transacao){
+    public void receberTransacao(TransacaoDto transacao){
         transacoes.add(transacao);
     }
 
-    public void deletarTransacoes(){
+    public void deletarTransacao(){
         transacoes.clear();
     }
 
-    public List<TransacaoRequestDto> buscarTransacoes(int intervaloBusca){
+    public List<TransacaoDto> buscarTransacao(int intervaloBusca){
         OffsetDateTime periodoBusca = OffsetDateTime.now().minusSeconds(intervaloBusca);
         return transacoes.stream()
                 .filter(t -> t.dataHora().isAfter(periodoBusca))
