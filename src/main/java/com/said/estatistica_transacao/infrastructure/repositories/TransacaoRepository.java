@@ -1,11 +1,13 @@
 package com.said.estatistica_transacao.infrastructure.repositories;
 
 import com.said.estatistica_transacao.infrastructure.dtos.TransacaoDto;
+import org.springframework.stereotype.Repository;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class TransacaoRepository {
 
     private final List<TransacaoDto> transacoes = new ArrayList<>();
