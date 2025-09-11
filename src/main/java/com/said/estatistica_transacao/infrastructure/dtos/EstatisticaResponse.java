@@ -16,7 +16,7 @@ public class EstatisticaResponse {
         this.sum = estatisticas.getSum();
         this.avg = estatisticas.getAverage();
         this.min = estatisticas.getMin() == Double.POSITIVE_INFINITY ? 0 : estatisticas.getMin();
-        this.max = estatisticas.getMax()== Double.NEGATIVE_INFINITY ? 0 : estatisticas.getMin();
+        this.max = estatisticas.getMax()== Double.NEGATIVE_INFINITY ? 0 : estatisticas.getMax();
     }
 
     public Long getCount() {

@@ -11,12 +11,12 @@ import java.util.List;
 @Service
 public class TransacaoService {
 
+    private final Logger log = LoggerFactory.getLogger(TransacaoService.class);
     private final TransacaoRepository repository;
+
     public TransacaoService(TransacaoRepository repository){
         this.repository = repository;
     }
-    final Logger log = LoggerFactory.getLogger(TransacaoService.class);
-
 
     public void receberTransacao(TransacaoDto transacao){
         log.info("Iniciado o processamento de registrar transações {}", transacao);
@@ -35,7 +35,7 @@ public class TransacaoService {
     public List<TransacaoDto> buscarTransacao(int intervaloBusca){
         log.info("Inicado processo de busca de transações nos últimos {} segundos", intervaloBusca);
 
-        log.info("Retorno de transações com sucesso");
+        log.info("Retorno de transações em andamento");
         return repository.buscarTransacao(intervaloBusca);
     }
 
