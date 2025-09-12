@@ -22,6 +22,7 @@ public class TransacaoService {
     }
 
     public void receberTransacao(TransacaoDto transacao) {
+        long inicio = System.currentTimeMillis();
         log.info("Iniciado o processamento de registrar transações {}", transacao);
 
         if (transacao.dataHora().isAfter(OffsetDateTime.now())) {
@@ -35,19 +36,36 @@ public class TransacaoService {
 
         repository.receberTransacao(transacao);
         log.info("Transação registrada com sucesso");
+        long fim = System.currentTimeMillis();
+        long tempoRequisicao = fim - inicio;
+        System.out.println("Tempo gasto pela requisição (ms): " + tempoRequisicao);
     }
 
     public void deletarTtransacao() {
+        long inicio = System.currentTimeMillis();
+
         log.info("Iniciado processamento para deletar transações");
 
         repository.deletarTransacao();
+
         log.info("Transações deletadas com sucesso");
+
+        long fim = System.currentTimeMillis();
+        long tempoRequisicao = fim - inicio;
+        System.out.println("Tempo gasto pela requisição (ms): " + tempoRequisicao);
     }
 
     public List<TransacaoDto> buscarTransacao(int intervaloBusca) {
+        long inicio = System.currentTimeMillis();
+
         log.info("Inicado processo de busca de transações nos últimos {} segundos", intervaloBusca);
 
         log.info("Retorno de transações em andamento");
+
+        long fim = System.currentTimeMillis();
+        long tempoRequisicao = fim - inicio;
+        System.out.println("Tempo gasto pela requisição (ms): " + tempoRequisicao);
+
         return repository.buscarTransacao(intervaloBusca);
     }
 

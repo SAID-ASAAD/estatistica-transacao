@@ -14,17 +14,24 @@ public class EstatisticaService {
     private final Logger log = LoggerFactory.getLogger(EstatisticaService.class);
     private final TransacaoService transacaoService;
 
-    public EstatisticaService(TransacaoService transacaoService){
+    public EstatisticaService(TransacaoService transacaoService) {
         this.transacaoService = transacaoService;
     }
 
-    public EstatisticaResponse obterEstatisticas(int intervaloBusca){
+    public EstatisticaResponse obterEstatisticas(int intervaloBusca) {
+        long inicio = System.currentTimeMillis();
+
         log.info("Iniciada busca de estatísticas de transações pelo período de {} segundos", intervaloBusca);
 
-       DoubleSummaryStatistics estatisticas  = transacaoService.buscarTransacao(intervaloBusca).stream()
+        DoubleSummaryStatistics estatisticas = transacaoService.buscarTransacao(intervaloBusca).stream()
                 .mapToDouble(TransacaoDto::valor).summaryStatistics();
 
-       log.info("Retorno de estatisticas em andamento");
-       return new EstatisticaResponse(estatisticas);
+        log.info("Retorno de estatisticas em andamento");
+
+        long fim = System.currentTimeMillis();
+        long tempoRequisicao = fim - inicio;
+        System.out.println("Tempo gasto pela requisição (ms): " + tempoRequisicao);
+
+        return new EstatisticaResponse(estatisticas);
     }
 }
