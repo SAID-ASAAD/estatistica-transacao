@@ -34,7 +34,7 @@ public class TransacaoService {
         }
 
         repository.receberTransacao(transacao);
-        log.info("Transações registradas com sucesso");
+        log.info("Transação registrada com sucesso");
     }
 
     public void deletarTtransacao() {
