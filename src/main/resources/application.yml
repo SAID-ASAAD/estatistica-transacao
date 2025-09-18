@@ -10,9 +10,9 @@ management:
     env:
       enable: true
     app:
-      name: "Api de Transações"
+      name: "Api de TransaÃ§Ãµes"
       version: 1.0.0
-      description: "Api responsável por gerenciar transações e estatísticas"
+      description: "Api responsÃ¡vel por gerenciar transaÃ§Ãµes e estatÃ­sticas"
     metrics:
       tags:
         application: api-transacoes
