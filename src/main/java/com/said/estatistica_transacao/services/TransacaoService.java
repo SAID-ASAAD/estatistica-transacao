@@ -41,7 +41,7 @@ public class TransacaoService {
         System.out.println("Tempo gasto pela requisição (ms): " + tempoRequisicao);
     }
 
-    public void deletarTtransacao() {
+    public void deletarTransacao() {
         long inicio = System.currentTimeMillis();
 
         log.info("Iniciado processamento para deletar transações");
