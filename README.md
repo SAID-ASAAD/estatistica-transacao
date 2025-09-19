@@ -4,6 +4,8 @@ This project is a REST API, developed in Java with Spring Boot, which calculates
 
 The bilingualism present in the code and JSON fields (using Portuguese terms like `valor` and `dataHora`) is intentional, as the project was proposed as a technical challenge by a Brazilian company with these terms as requirements.
 
+P.S.: The language alternation in the commits messages is a mistake, sorry for that.
+
 ### Tech Stack
 
 *   **Java 21**: The core programming language.
@@ -28,7 +30,6 @@ The bilingualism present in the code and JSON fields (using Portuguese terms lik
 1.  Clone the project repository:
     ```bash
     git clone https://github.com/SAID-ASAAD/estatistica-transacao.git
-    cd estatistica-transacao
     ```
 
 2.  Compile and run the application using Maven:
@@ -48,11 +49,10 @@ The bilingualism present in the code and JSON fields (using Portuguese terms lik
     ```bash
     docker run -p 8080:8080 estatistica-transacao
     ```
-    The application will be available at `http://localhost:8080`.
-
+    
 ## API Documentation
 
-The base URL for all endpoints is `http://localhost:8080`.
+The URL for the Swagger UI is `http://localhost:8080/swagger-ui/index.html#/`.
 
 ---
 

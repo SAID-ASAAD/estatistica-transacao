@@ -35,7 +35,7 @@ public class TransacaoController {
     @Operation(description = "Deleta as transações que estão armazenadas")
     @ApiResponse(responseCode = "200", description = "Transação deletada com sucesso")
     public ResponseEntity<Void> deletarTransacao(){
-        transacaoService.deletarTtransacao();
+        transacaoService.deletarTransacao();
         return ResponseEntity.ok().build();
     }
 }
