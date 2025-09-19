@@ -4,6 +4,8 @@ This project is a REST API, developed in Java with Spring Boot, which calculates
 
 The bilingualism present in the code and JSON fields (using Portuguese terms like `valor` and `dataHora`) is intentional, as the project was proposed as a technical challenge by a Brazilian company with these terms as requirements.
 
+P.S.: The language alternation in the commits messages is a mistake, sorry for that.
+
 ### Tech Stack
 
 *   **Java 21**: The core programming language.
