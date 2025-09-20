@@ -107,17 +107,17 @@ GET /estatistica?intervaloBusca=30
 **Success Response:**
 
 *   **Code:** `200 OK`
-*   **Content:** `application/json`
+*   **Content:** `json body`
 
 **Example Response Body:**
 
 ```json
 {
+  "count": 2,
   "sum": "150.50",
   "avg": "75.25",
-  "max": "100.00",
   "min": "50.50",
-  "count": 2
+  "max": "100.00"
 }
 ```
 
